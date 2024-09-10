@@ -1,289 +1,96 @@
-%%%%
-% MTecknology's Resume
-%%%%
-% Author: Michael Lustfield
-% License: CC-BY-4
-% - https://creativecommons.org/licenses/by/4.0/legalcode.txt
-%%%%
-
-\documentclass[letterpaper,10pt]{article}
-%%%%%%%%%%%%%%%%%%%%%%%
-%% BEGIN_FILE: mteck.sty
-%% NOTE: Everything between here and END_FILE can
-%% be relocated to "mteck.sty" and then included with:
-%\usepackage{mteck}
-
-% Dependencies
-% NOTE: Some packages (lastpage, hyperref) require second build!
-\usepackage[empty]{fullpage}
-\usepackage{titlesec}
+\documentclass[a4paper,10pt]{article}
+\usepackage[utf8]{inputenc}
 \usepackage{enumitem}
-\usepackage[hidelinks]{hyperref}
-\usepackage{fancyhdr}
-\usepackage{fontawesome5}
-\usepackage{multicol}
-\usepackage{bookmark}
-\usepackage{lastpage}
-
-% Sans-Serif
-%\usepackage[sfdefault]{FiraSans}
-%\usepackage[sfdefault]{roboto}
-%\usepackage[sfdefault]{noto-sans}
-%\usepackage[default]{sourcesanspro}
-
-% Serif
-\usepackage{CormorantGaramond}
-\usepackage{charter}
-
-% Colors
-% Use with \color{Name}
-% Can wrap entire heading with {\color{accent} [...] }
+\usepackage{hyperref}
+\usepackage[left=0.5in, right=0.5in, top=0.25in, bottom=0.25in]{geometry}
 \usepackage{xcolor}
-\definecolor{accentTitle}{HTML}{0e6e55}
-\definecolor{accentText}{HTML}{0e6e55}
-\definecolor{accentLine}{HTML}{a16f0b}
+\usepackage{titlesec}
+\usepackage{tabularx}
+\usepackage{fontawesome}
+\usepackage{graphicx}
+% \usepackage{parskip} % For reducing vertical space between paragraphs
 
-% Misc. Options
-\pagestyle{fancy}
-\fancyhf{}
-\fancyfoot{}
-\renewcommand{\headrulewidth}{0pt}
-\renewcommand{\footrulewidth}{0pt}
-\urlstyle{same}
-
-% Adjust Margins
-\addtolength{\oddsidemargin}{-0.7in}
-\addtolength{\evensidemargin}{-0.5in}
-\addtolength{\textwidth}{1.19in}
-\addtolength{\topmargin}{-0.7in}
-\addtolength{\textheight}{1.4in}
-
-\setlength{\multicolsep}{-3.0pt}
-\setlength{\columnsep}{-1pt}
-\setlength{\tabcolsep}{0pt}
-\setlength{\footskip}{3.7pt}
-\raggedbottom
-\raggedright
-
-% ATS Readability
-\input{glyphtounicode}
-\pdfgentounicode=1
-
-%-----------------%
-% Custom Commands %
-%-----------------%
-
-% Centered title along with subtitle between HR
-% Usage: \documentTitle{Name}{Details}
-\newcommand{\documentTitle}[2]{
-  \begin{center}
-    {\Huge\color{accentTitle} #1}
-    \vspace{10pt}
-    {\color{accentLine} \hrule}
-    \vspace{2pt}
-    %{\footnotesize\color{accentTitle} #2}
-    \footnotesize{#2}
-    \vspace{2pt}
-    {\color{accentLine} \hrule}
-  \end{center}
-}
-
-% Create a footer with correct padding
-% Usage: \documentFooter{\thepage of X}
-\newcommand{\documentFooter}[1]{
-  \setlength{\footskip}{10.25pt}
-  \fancyfoot[C]{\footnotesize #1}
-}
-
-% Simple wrapper to set up page numbering
-% Usage: \numberedPages
-% WARNING: Must run pdflatex twice!
-\newcommand{\numberedPages}{
-  \documentFooter{\thepage/\pageref{LastPage}}
-}
-
-% Section heading with horizontal rule
-% Usage: \section{Title}
+% Define a custom section format
 \titleformat{\section}{
-  \vspace{-5pt}
-  \color{accentText}
-  \raggedright\large\bfseries
-}{}{0em}{}[\color{accentLine}\titlerule]
+  \normalfont\Large\bfseries\color{black}
+}{}
+{0em}
+{}[\titlerule\color{black}\vspace{0.1em}]
 
-% Section heading with separator and content on same line
-% Usage: \tinysection{Title}
-\newcommand{\tinysection}[1]{
-  \phantomsection
-  \addcontentsline{toc}{section}{#1}
-  {\large{\bfseries\color{accentText}#1} {\color{accentLine} |}}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=blue,      
+    urlcolor=blue,
+    pdftitle={Resume},
+    pdfpagemode=FullScreen,
 }
 
-% Indented line with arguments left/right aligned in document
-% Usage: \heading{Left}{Right}
-\newcommand{\heading}[2]{
-  \hspace{10pt}#1\hfill#2\\
-}
+% Define custom logo icon
+\newcommand{\leetcodeicon}{\raisebox{-0.3\height}{\includegraphics[height=2.5ex]{LeetCode_logo.png}}}
 
-% Adds \textbf to \heading
-\newcommand{\headingBf}[2]{
-  \heading{\textbf{#1}}{\textbf{#2}}
-}
+% Define a custom column type for tabularx
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
 
-% Adds \textit to \heading
-\newcommand{\headingIt}[2]{
-  \heading{\textit{#1}}{\textit{#2}}
-}
-
-% Template for itemized lists
-% Usage: \begin{resume_list} [items] \end{resume_list}
-\newenvironment{resume_list}{
-  \vspace{-7pt}
-  \begin{itemize}[itemsep=-2px, parsep=1pt, leftmargin=30pt]
-}{
-  \end{itemize}
-  %\vspace{-2pt}
-}
-
-% Formats an item to use as an itemized title
-% Usage: \itemTitle{Title}
-\newcommand{\itemTitle}[1]{
-  \item[] \underline{#1}\vspace{4pt}
-}
-
-% Bullets used in itemized lists
-\renewcommand\labelitemi{--}
-
-%% END_FILE: mteck.sty
-%%%%%%%%%%%%%%%%%%%%%%
-
-
-%===================%
-% John Doe's Resume %
-%===================%
-
-%\numberedPages % NOTE: lastpage requires a second build
-%\documentFooter{\thepage of 2} % Does similar without using lastpage
 \begin{document}
 
-  %---------%
-  % Heading %
-  %---------%
+\begin{center}
+    \LARGE{\textbf{Md Shafayett Hussain}} \\
+    {\small \faLinkedinSquare\ \href{https://www.linkedin.com/in/hussainshafayet/}{LinkedIn} $\cdot$ 
+    \faGithub\ \href{https://github.com/HussainShafayet}{Github} $\cdot$ 
+    \leetcodeicon\ \href{https://leetcode.com/u/hussain_shafayet/}{LeetCode} $\cdot$ 
+    \faEnvelope\ \href{mailto:shafayetsec09@gmail.com}{shafayetsec09@gmail.com} $\cdot$
+    \faPhone\ \href{tel:+8801925890091}{+8801925890091}}
+\end{center}
 
-  \documentTitle{Md Shafayett Hussain}{
-    % Web Version
-    %\raisebox{-0.05\height} \faPhone\ [redacted - web copy] ~
-    %\raisebox{-0.15\height} \faEnvelope\ [redacted - web copy] ~
-    %%
-    \href{tel:1234567890}{
-      \raisebox{-0.05\height} \faPhone\ +8801925890091} ~ | ~
-    \href{mailto:shafayetsec09@gmail.com}{
-      \raisebox{-0.15\height} \faEnvelope\ shafayetsec09@gmail.com} ~ | ~
-    \href{https://www.linkedin.com/in/hussainshafayet/}{
-      \raisebox{-0.15\height} \faLinkedin\ hussainshafayet} ~ | ~
-    \href{https://github.com/HussainShafayet}{
-      \raisebox{-0.15\height} \faGithub\ HussainShafayet} ~ | ~
-    \href{https://hussainshafayet.github.io/myportfolio}{
-      \raisebox{-0.15\height} \faGlobe\ Portfolio}
-  }
 
-  %---------%
-  % Summary %
-  %---------%
+\section*{Summary}
 
-  \tinysection{Summary}
-  Simplified version of a monstrosity that I built back in college using current best practices.
+Skilled JavaScript developer with expertise in building dynamic, responsive web apps using modern libraries or frameworks like React and Ember.js. Passionate about writing clean, efficient code and delivering top-notch user experiences.
 
-  %--------%
-  % Skills %
-  %--------%
+\section*{Skills}
+\begin{itemize}[leftmargin=*]
+    \item JavaScript \textbar\ React\ \textbar\ Ember.js \textbar\ Django Rest Frameworks 
+    \item Git \textbar\ Chrome DevTools \textbar\ React Developer Tool \textbar\ Ember Inspector
+\end{itemize}
 
-  \section{Skills}
+\section*{Experience}
 
-  \begin{multicols}{2}
-    \begin{itemize}[itemsep=-2px, parsep=1pt, leftmargin=75pt]
-      \item[\textbf{Languages}] Javascript
-      \item[\textbf{Frameworks/Libraries}] Ember, React
-      \item[\textbf{Tools}] Git, Visual Studio Code, Chrome DevTools, React Developer, Ember Inspector
-    \end{itemize}
-  \end{multicols}
+\large\textbf{Software Engineer}\normalsize \hfill \textbf{\underline{\href{https://algorithmgeneration.com/}{Algorithm Generation Limited}}} \hfill Dhaka, Bangladesh \hfill \textbf{10/2020 - Present}
+\vspace{0.1cm}
+\begin{itemize}[leftmargin=*]
+    \item \textbf{Lead} a team of developers in designing and implementing scalable APIs, dynamic frontend components, and efficient background workers.
+    \item \textbf{Implemented} real-time communication using WebSockets and integrated various payment gateway APIs.
+    \item \textbf{Developed} sophisticated frontend components and provided insights on API design, development, and frontend architecture.
+    \item \textbf{Collaborated} with senior developers to refactor code and build reusable components. Mentored junior developers and contributed to applications, including e-commerce platforms, Zakat applications, and accounting software.
+    \item \textbf{Created} backend APIs for mobile applications such as Garibook and Probashi Sheba, and customized third-party packages and addons to meet project specifications.
+    \item \textbf{Transformed} designs into web applications from scratch and implemented features. Integrated APIs with Ember.js and Ember Data, customizing adapters and serializers to align with API responses.
+\end{itemize}
+\vspace{0.1cm}
+\large\textbf{Python Developer}\normalsize \hfill \textbf{\underline{\href{https://securewp.net/}{SecureWP.net}}} \hfill Dhaka, Bangladesh \hfill \textbf{04/2019 - 10/2020}
+\vspace{0.1cm}
+\begin{itemize}[leftmargin=*]
+    \item \textbf{Engineered} a robust website vulnerability scanner to identify and report concealed threats.
+    \item \textbf{Designed} and implemented APIs to deliver detailed website vulnerability scan results.
+    \item \textbf{Implemented} adaptive UI components to improve user experience.
+    \item \textbf{Conducted} extensive research on JavaScript malware to enhance security protocols.
 
-  %------------%
-  % Experience %
-  %------------%
+\end{itemize}
 
-  \section{Experience}
+\section*{Projects}
 
-  \headingBf{Consulting Corp}{Jul 2015 -- Jun 2025}
-  \headingIt{Senior DevOps Engineer (FTE Consultant)}{}
-  \begin{resume_list}
-    \itemTitle{Client: Notable Placement}
-    \item Analyzed network traffic patterns to identify bottlenecks and optimize performance
-    \item Implemented firewall rules to enhance network security and prevent unauthorized access
-    \item Conducted regular vulnerability assessments and applied patches to secure systems
-    \item Collaborated with cross-functional teams to streamline IT processes and improve efficiency
-    \vspace{3pt}
-    \itemTitle{Client: Challenges Unlimited}
-    \item Configured monitoring tools to track system performance and troubleshoot issues proactively
-    \item Automated routine tasks using scripts to reduce manual effort and increase productivity
-    \item Documented system configurations and procedures for knowledge sharing within the team
-    \item Participated in disaster recovery planning and drills to ensure business continuity in case of emergencies
-    \vspace{3pt}
-    \itemTitle{Client: Broken Galleries}
-    \item Implemented cloud migration strategies to move applications to a hybrid environment
-    \item Optimized database performance through indexing and query tuning techniques
-    \item Conducted capacity planning and scalability assessments to support future growth
-    \item Provided on-call support for critical issues and worked on root cause analysis for incident resolution
-  \end{resume_list}
+\begin{itemize}[leftmargin=*]
+     \item \textbf{SaaS E-commerce}: A SaaS product providing licenses for users to create their own e-commerce websites and admin panels. (Ember.js, Websokets, Django, Celery, Django Channels, Postgresql)
+     \item \textbf{Zakat Web Application}: A religious platform for requesting and donating Zakat, featuring a Zakat calculator and an admin panel to manage Zakat requests. (Ember.js, Websokets, Python, Django, Celery, Django Channels, Postgresql)
+    \item \textbf{Probashi Sheba}: An online platform for Bangladeshi expatriates and aspirants to exchange skills, experiences, and services. (Django, Celery, Django Channels, Postgresql) \href{https://play.google.com/store/apps/details?id=com.agl.probashi&hl=en_US&gl=US}{[URL]}
+    \item \textbf{Garibook}: A ride-sharing app in Bangladesh allowing users to rent cars and drivers to bid on rental requests and post trips. (Django, Celery, Django Channels, Postgresql) \href{https://play.google.com/store/apps/details?id=com.garibook.user&hl=en}{[Client]} \href{https://play.google.com/store/apps/details?id=com.garibook.partner&hl=en}{[Driver]}
+    \item \textbf{Website Vulnerability Scanner}: Developed a scanner to detect hidden malicious links, SEO spam, malicious JavaScript, and vulnerabilities in WordPress plugins, themes, and code. (Django, React.js, Postgresql) \href{https://securewp.net/security-checker/}{[URL]}
+\end{itemize}
 
-  \headingBf{HealthCo Industries}{Feb 2011 -- Mar 2016}
-  \headingIt{Senior Systems Administrator (SRE)}{}
-  \begin{resume_list}
-    \item Managed virtualized server environment spanning multiple data centers
-    \item Oversaw migration of critical business applications to cloud-based platforms
-    \item Configured and monitored network security measures, including firewalls and intrusion detection systems
-    \item Implemented multi-factor authentication for remote access to company systems
-    \item Streamlined patch management process, reducing vulnerabilities and downtime
-    \item Conducted regular vulnerability assessments and penetration testing
-    \item Automated server provisioning and configuration management tasks
-    \item Maintained documentation for IT policies and procedures
-    \item Coordinated responses to cybersecurity incidents with internal teams and external vendors
-  \end{resume_list}
-
-  %-----------%
-  % Education %
-  %-----------%
-
-  \section{Education}
-
-  \headingBf{State University}{} % Note: Adding year(s) exposes an implied age
-  \headingIt{Bachelor of Science in Computer Information Systems}{}
-  \headingIt{Minors: Networking ; Network Security}{}
-
-  \vspace{5pt}
-  \headingBf{Certifications}{}
-  \begin{resume_list}
-    \item Salt \hspace{2pt}- SaltStack Certified Engineer
-    \item GCP - Professional Cloud Architect
-  \end{resume_list}
-
-  %----------------------------%
-  % Extracurricular Activities %
-  %----------------------------%
-
-  \section{Projects}
-
-  \headingBf{Hospital / Health Science IRB}{Mar 2015 -- Present}
-  \begin{resume_list}
-    \item Served as non-scientific/unaffiliated patient-representative
-    \item Reviewed patient consent forms for completeness, accuracy, and clarity
-    \item Became familiar with industry standards and regulations (OHRP, HIPAA)
-  \end{resume_list}
-
-  \headingBf{Debian Linux}{Jan 2001 -- Present}
-  \begin{resume_list}
-    \item Maintained packages in Debian repositories
-    \item Reviewed and sponsored packages on behalf of prospective Developers
-    \item Resolved bugs reported in bug tracking system
-  \end{resume_list}
+\section*{Education}
+\begin{tabularx}{\textwidth}{@{}Y r@{}}
+    \textbf{Bachelor of Science in Software Engineering} & \textbf{04/2015 - 12/2019} \\
+    \multicolumn{2}{@{}l@{}}{Daffodil International University} \\
+\end{tabularx}
 
 \end{document}
