@@ -203,7 +203,7 @@
     \begin{itemize}[itemsep=-2px, parsep=1pt, leftmargin=75pt]
       \item[\textbf{Languages}] Javascript
       \item[\textbf{Frameworks/Libraries}] Ember, React
-      \item[\textbf{Tools}] Git, Visual Studio Code, Chrome DevTools, React Developer tools, Ember Inspector
+      \item[\textbf{Tools}] Git, Visual Studio Code, Chrome DevTools, React Developer, Ember Inspector
     \end{itemize}
   \end{multicols}
 
