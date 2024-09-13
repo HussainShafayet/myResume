@@ -56,41 +56,33 @@ Skilled JavaScript developer with expertise in building dynamic, responsive web 
 
 \section*{Experience}
 
-\large\textbf{Software Engineer}\normalsize \hfill \textbf{\underline{\href{https://algorithmgeneration.com/}{Algorithm Generation Limited}}} \hfill Dhaka, Bangladesh \hfill \textbf{10/2020 - Present}
+\large\textbf{Software Developer}\normalsize \hfill \textbf{\underline{\href{https://algorithmgeneration.com/}{Algorithm Generation Limited}}} \hfill Dhaka, Bangladesh \hfill \textbf{1/6/2021 - Present}
 \vspace{0.1cm}
 \begin{itemize}[leftmargin=*]
-    \item \textbf{Lead} a team of developers in designing and implementing scalable APIs, dynamic frontend components, and efficient background workers.
+    \item \textbf{Developed} sophisticated components and provided insights on API design, development, and architecture.
+    \item \textbf{Collaborated} with senior developers to refactor code and build reusable components. Mentored junior developers and contributed to applications.
     \item \textbf{Implemented} real-time communication using WebSockets and integrated various payment gateway APIs.
-    \item \textbf{Developed} sophisticated frontend components and provided insights on API design, development, and frontend architecture.
-    \item \textbf{Collaborated} with senior developers to refactor code and build reusable components. Mentored junior developers and contributed to applications, including e-commerce platforms, Zakat applications, and accounting software.
-    \item \textbf{Created} backend APIs for mobile applications such as Garibook and Probashi Sheba, and customized third-party packages and addons to meet project specifications.
+    \item \textbf{Developed} a comprehensive Clerk, Accounting System and HR web application using Ember.js. Managed all API integrations efficiently with Ember Data.
+    Implemented real-time updates using WebSockets for seamless user experience.
+    Focused on modular development, reusable components, and optimized performance.  
     \item \textbf{Transformed} designs into web applications from scratch and implemented features. Integrated APIs with Ember.js and Ember Data, customizing adapters and serializers to align with API responses.
 \end{itemize}
 \vspace{0.1cm}
-\large\textbf{Python Developer}\normalsize \hfill \textbf{\underline{\href{https://securewp.net/}{SecureWP.net}}} \hfill Dhaka, Bangladesh \hfill \textbf{04/2019 - 10/2020}
-\vspace{0.1cm}
-\begin{itemize}[leftmargin=*]
-    \item \textbf{Engineered} a robust website vulnerability scanner to identify and report concealed threats.
-    \item \textbf{Designed} and implemented APIs to deliver detailed website vulnerability scan results.
-    \item \textbf{Implemented} adaptive UI components to improve user experience.
-    \item \textbf{Conducted} extensive research on JavaScript malware to enhance security protocols.
-
-\end{itemize}
 
 \section*{Projects}
 
 \begin{itemize}[leftmargin=*]
-     \item \textbf{SaaS E-commerce}: A SaaS product providing licenses for users to create their own e-commerce websites and admin panels. (Ember.js, Websokets, Django, Celery, Django Channels, Postgresql)
-     \item \textbf{Zakat Web Application}: A religious platform for requesting and donating Zakat, featuring a Zakat calculator and an admin panel to manage Zakat requests. (Ember.js, Websokets, Python, Django, Celery, Django Channels, Postgresql)
-    \item \textbf{Probashi Sheba}: An online platform for Bangladeshi expatriates and aspirants to exchange skills, experiences, and services. (Django, Celery, Django Channels, Postgresql) \href{https://play.google.com/store/apps/details?id=com.agl.probashi&hl=en_US&gl=US}{[URL]}
+     \item \textbf{Clerk}: A SaaS product providing licenses for users to create their own e-commerce websites and admin panels. (Ember.js, Websokets, Django, Celery, Django Channels, Postgresql)
+     \item \textbf{Accounting System}: A religious platform for requesting and donating Zakat, featuring a Zakat calculator and an admin panel to manage Zakat requests. (Ember.js, Websokets, Python, Django, Celery, Django Channels, Postgresql)
+    \item \textbf{HR}: An online platform for Bangladeshi expatriates and aspirants to exchange skills, experiences, and services. (Django, Celery, Django Channels, Postgresql) \href{https://play.google.com/store/apps/details?id=com.agl.probashi&hl=en_US&gl=US}{[URL]}
     \item \textbf{Garibook}: A ride-sharing app in Bangladesh allowing users to rent cars and drivers to bid on rental requests and post trips. (Django, Celery, Django Channels, Postgresql) \href{https://play.google.com/store/apps/details?id=com.garibook.user&hl=en}{[Client]} \href{https://play.google.com/store/apps/details?id=com.garibook.partner&hl=en}{[Driver]}
     \item \textbf{Website Vulnerability Scanner}: Developed a scanner to detect hidden malicious links, SEO spam, malicious JavaScript, and vulnerabilities in WordPress plugins, themes, and code. (Django, React.js, Postgresql) \href{https://securewp.net/security-checker/}{[URL]}
 \end{itemize}
 
 \section*{Education}
 \begin{tabularx}{\textwidth}{@{}Y r@{}}
-    \textbf{Bachelor of Science in Software Engineering} & \textbf{04/2015 - 12/2019} \\
-    \multicolumn{2}{@{}l@{}}{Daffodil International University} \\
+    \textbf{Bachelor of Science in Computer Science and Engineering} & \textbf{3/2016 - 12/2021} \\
+    \multicolumn{2}{@{}l@{}}{Sylhet Engineering College} \\
 \end{tabularx}
 
 \end{document}
