@@ -35,7 +35,7 @@
 \begin{document}
 
 \begin{center}
-    \LARGE{\textbf{Md Shafayett Hussain}} \\
+    \LARGE{\textbf{Md Shafayet Hussain}} \\
     {\small \faLinkedinSquare\ \href{https://www.linkedin.com/in/hussainshafayet/}{LinkedIn} $\cdot$ 
     \faGithub\ \href{https://github.com/HussainShafayet}{Github} $\cdot$ 
     \leetcodeicon\ \href{https://leetcode.com/u/hussain_shafayet/}{LeetCode} $\cdot$ 
@@ -46,12 +46,14 @@
 
 \section*{Summary}
 
-Skilled JavaScript developer with expertise in building dynamic, responsive web apps using modern libraries or frameworks like React and Ember.js. Passionate about writing clean, efficient code and delivering top-notch user experiences.
+Experienced JavaScript developer with 3+ years in building dynamic, scalable web applications using modern frameworks such as React and Ember.js. Proficient in creating clean, efficient code that enhances the user experience and improves application performance.
 
 \section*{Skills}
 \begin{itemize}[leftmargin=*]
-    \item JavaScript \textbar\ React\ \textbar\ Ember.js \textbar\ Django Rest Frameworks 
-    \item Git \textbar\ Chrome DevTools \textbar\ React Developer Tool \textbar\ Ember Inspector
+    \item \textbf{Languages} JavaScript \textbar\ HTML\ \textbar\ CSS 
+    \item \textbf{Frameworks/Libraries} React \textbar\ Ember\ \textbar\ Django
+    \item \textbf{Version Control} Git
+    \item \textbf{Development Tools} Chrome DevTools \textbar\ React Developer Tools\ \textbar\ Ember Inspector
 \end{itemize}
 
 \section*{Experience}
@@ -61,7 +63,6 @@ Skilled JavaScript developer with expertise in building dynamic, responsive web 
 \begin{itemize}[leftmargin=*]
     \item \textbf{Developed} sophisticated components and provided insights on API design, development, and architecture.
     \item \textbf{Collaborated} with senior developers to refactor code and build reusable components. Mentored junior developers and contributed to applications.
-    \item \textbf{Implemented} real-time communication using WebSockets and integrated various payment gateway APIs.
     \item \textbf{Developed} a comprehensive Clerk, Accounting System and HR web application using Ember.js. Managed all API integrations efficiently with Ember Data.
     Implemented real-time updates using WebSockets for seamless user experience.
     Focused on modular development, reusable components, and optimized performance.  
@@ -86,5 +87,16 @@ Skilled JavaScript developer with expertise in building dynamic, responsive web 
     \textbf{Bachelor of Science in Computer Science and Engineering} & \textbf{3/2016 - 12/2021} \\
     \multicolumn{2}{@{}l@{}}{Sylhet Engineering College} \\
 \end{tabularx}
+
+% \section*{Organizations}
+% \begin{tabularx}{\textwidth}{@{}Y r@{}}
+%     \textbf{Prothom-Alo Bondhushava, Sylhet} & \textbf{2018 - 12/2021} \\
+%     \multicolumn{2}{@{}l@{}}{Organizing Secretary} \\
+% \end{tabularx}
+
+\section*{Language}
+\begin{itemize}[leftmargin=*]
+    \item Bangla \textbar\ English
+\end{itemize}
 
 \end{document}
