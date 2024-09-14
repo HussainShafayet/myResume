@@ -72,11 +72,13 @@ Skilled JavaScript developer with expertise in building dynamic, responsive web 
 \section*{Projects}
 
 \begin{itemize}[leftmargin=*]
-     \item \textbf{Clerk}: A SaaS product providing licenses for users to create their own e-commerce websites and admin panels. (Ember.js, Websokets, Django, Celery, Django Channels, Postgresql)
-     \item \textbf{Accounting System}: A religious platform for requesting and donating Zakat, featuring a Zakat calculator and an admin panel to manage Zakat requests. (Ember.js, Websokets, Python, Django, Celery, Django Channels, Postgresql)
-    \item \textbf{HR}: An online platform for Bangladeshi expatriates and aspirants to exchange skills, experiences, and services. (Django, Celery, Django Channels, Postgresql) \href{https://play.google.com/store/apps/details?id=com.agl.probashi&hl=en_US&gl=US}{[URL]}
-    \item \textbf{Garibook}: A ride-sharing app in Bangladesh allowing users to rent cars and drivers to bid on rental requests and post trips. (Django, Celery, Django Channels, Postgresql) \href{https://play.google.com/store/apps/details?id=com.garibook.user&hl=en}{[Client]} \href{https://play.google.com/store/apps/details?id=com.garibook.partner&hl=en}{[Driver]}
-    \item \textbf{Website Vulnerability Scanner}: Developed a scanner to detect hidden malicious links, SEO spam, malicious JavaScript, and vulnerabilities in WordPress plugins, themes, and code. (Django, React.js, Postgresql) \href{https://securewp.net/security-checker/}{[URL]}
+     \item \textbf{Clerk}: Developed an accounting system to manage financial records and transactions.Utilized Ember.js for a responsive and modular front-end.Integrated APIs using Ember Data for seamless data management. Managed live notifications and real-time updates with WebSockets.Focused on creating a user-friendly interface and optimized performance. (Ember.js, Websockets)
+
+     \item \textbf{HR}: Developed an HR web app with Ember.js, utilizing Ember Data for API management. Implemented real-time updates via WebSockets. Focused on modular design, performance optimization, and Agile practices. (Ember.js, Websokets)
+    \item \textbf{Image Gallery}:Simplify image management – upload, delete, and sort effortlessly for an organized gallery.(React) \href{https://hussainshafayet.github.io/image-gallery/}{[URL]}
+    
+    \item \textbf{Todo App}: A Todo List Application built with React.js featuring a Kanban-style interface with three distinct columns: New, Ongoing, and Done. The app allows users to manage tasks through different stages of completion with added functionalities like context menus, date pickers, and form pre-filling. (React) \href{https://hussainshafayet.github.io/todo-app/}{[URL]} 
+    
 \end{itemize}
 
 \section*{Education}
